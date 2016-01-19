@@ -37,8 +37,7 @@ module.exports = function (options) {
         .pipe(through(function (data) {
           var _data = {}
           for(var k in data) {
-            var value = data[k].trim()
-            _data[k.trim()] = isNaN(value) ? value : +value
+            _data[k.trim()] = data[k].trim();
           }
           this.queue(_data)
         }))
